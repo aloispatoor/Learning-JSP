@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+          
+  <!-- Reference for JSF customs tags
+JSF has custom tags that will generate html for us
+ -->
+<html 
+
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/facelets">
+
+	<!-- Header -->
+	<h:head>
+		<title>Student Response</title>
+	</h:head>
+	
+	<!-- body -->
+	<h:body>
+		<!-- getters/setters -->
+		Hello #{student.firstName} #{student.lastName}! You live in #{student.city}.
+		<br/>
+		Your favourite language of all time is #{student.favouriteLanguage}. And you also like:
+		<ul>
+			<!-- value= list name & var=iteration -->
+			<a:repeat var="language" value="#{student.favouriteLanguages}">
+			 	<li>#{language}</li>
+			</a:repeat>
+		</ul>
+	
+	</h:body>
+
+
+</html>

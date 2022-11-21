@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+          
+  <!-- Reference for JSF customs tags
+JSF has custom tags that will generate html for us
+ -->
+ 
+<html 
+
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+	<!-- Header -->
+	<h:head>
+		<title>Student Form</title>
+	</h:head>
+	
+	<!-- body -->
+	<h:body>
+	
+		<h:form>
+			
+			<!-- CUSTOM TAG -->
+			<!-- expression JSF -->
+			First Name : <h:inputText id="sfirstName" value="#{student.firstName}" />
+			
+			<br/>
+			<br/>
+
+			Last Name : <h:inputText id="slastName" value="#{student.lastName}" />
+		
+			<br/>
+			<br/>
+			<!-- Menu déroulant -->
+			<h:selectOneMenu value="#{student.city}">
+				<f:selectItems value="#{student.cities}"/>
+			</h:selectOneMenu>
+			
+			<br/>
+			<br/>
+			<!-- Liste choix bouton type radio -->
+			Your favorite programming language:
+			<h:selectOneRadio value="#{student.favouriteLanguage}">
+				<f:selectItem itemValue="PHP" itemLabel="PHP" />
+				<f:selectItem itemValue="Python" itemLabel="Python" />
+				<f:selectItem itemValue="Java" itemLabel="Java" />
+				<f:selectItem itemValue="JS" itemLabel="JS" />
+			</h:selectOneRadio>
+			
+			<br/>
+			<br/>
+			<!-- Liste choix bouton type checkbox -->
+			Your favorite programming languages:
+			<h:selectManyCheckbox value="#{student.favouriteLanguages}">
+				<f:selectItem itemValue="PHP" itemLabel="PHP" />
+				<f:selectItem itemValue="Python" itemLabel="Python" />
+				<f:selectItem itemValue="Java" itemLabel="Java" />
+				<f:selectItem itemValue="JS" itemLabel="JS" />
+			</h:selectManyCheckbox>
+			
+			<br/>
+			<br/>
+			
+			<h:commandButton value="register" action="student_response" />
+		
+		</h:form>
+	
+	</h:body>
+
+
+</html>
