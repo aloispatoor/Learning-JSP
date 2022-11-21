@@ -7,8 +7,8 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class Student {
-	private String firstName;
-	private String lastName;
+	private String firstName = "Jean-Michel";
+	private String lastName = "Lambda";
 	private String city;
 	private String favouriteLanguage;
 	private String[] favouriteLanguages;
